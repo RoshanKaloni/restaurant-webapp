@@ -1,0 +1,116 @@
+body{
+    height:100%;
+    width:100%;
+    background-image:url('https://www.theibizacatering.com/wp-content/uploads/2015/01/TheIbizaCatering_Slide01.jpg');/*your background image*/
+    background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
+    background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+    /*css hack for ie*/
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.https://www.theibizacatering.com/wp-content/uploads/2015/01/TheIbizaCatering_Slide01.jpg',sizingMethod='scale');
+    -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://www.theibizacatering.com/wp-content/uploads/2015/01/TheIbizaCatering_Slide01.jpg',sizingMethod='scale')";
+
+}
+
+.parent-container{
+    margin-top: 85px;
+
+}
+.container{
+    margin:25px;
+    margin-top:10px;
+
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  min-height: 80vh;
+}
+
+.contact-us {
+  font-size: 30px;
+  padding-bottom: 1rem;
+  text-align:center;
+  font-weight:bolder;
+  font-family:Times;
+}
+
+.content-para{
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    margin:25px;
+    font-size:15px;
+    font-family:"Courier New", Courier;
+    font-weight:bold;
+}
+.contact-method {
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  margin-left: 5rem;
+  font-size: 1.3rem;
+    color: black;
+    text-decoration:none;
+}
+
+.nav-linkTRM{
+    color: #000000;
+}
+
+/* mouse over link */
+.contact-method:hover {
+        color:gray;
+        text-decoration:none;
+
+      }
+/* selected link */
+
+#space {
+  margin-left: 1rem;
+}
+
+.animated {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+.animated2 {
+  -webkit-animation: animatezoom2 1s;
+  animation: animatezoom 1s 0.1s
+}
+
+@-webkit-keyframes animatezoom2 {
+  0% {transform:rotateX(0deg);}
+  25% {transform:rotateX(20deg);}
+  50% {transform:rotateX(0deg);}
+  75% {transform:rotateX(20deg);}
+  100% {transform:rotateX(0deg);}
+  }
+
+#map {
+    height: 450px;
+    width: 450px;
+    border-style: groove;
+    left: 30px;
+    top: 30px;
+    margin-bottom:80px;
+    opacity:1;
+}
+#location{
+    text-align:center;
+    padding-top:20px;
+    font-weight: bold;
+    font-size:35px;
+
+}

@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.52.0/maps/maps.css'>
+    <link rel='stylesheet' type='text/css' href='{% static 'css/contactus_2.css' %}'>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.52.0/maps/maps-web.min.js"></script>
+    <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/5.x/5.52.0/services/services-web.min.js"></script>
+    <script src='../static/js/contactus.js'></script>
+
+     <main>
+        <div class="parent-container d-flex ">
+             <div class="container shadow-lg p-3 mb-5 bg-white rounded animated  ">
+                <div class="row">
+                    <div class="col">
+                         <div id = "location" class="animated2 ">
+                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                 <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                             </svg>
+                             Where can you find us?
+                         </div>
+                        <div id="map" onload="call_map();" class="img-thumbnail"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container shadow-lg p-3 mb-5 bg-white rounded animated">
+
+                <div class="row">
+                    <div class="col">
+                        <div class="contact-us mt-5 animated2">
+                            <p>Feel Free to Contact Us</p>
+                        </div>
+                        <div class="content-para">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, aspernatur consequuntur dolorem earum enim explicabo illo ipsum maiores modi molestiae odit officiis pariatur qui quo repellat rerum sunt, veritatis voluptates!
+                        </div>
+                       <div class="contact-method animated2">
+                          <a class="nav-linkTRM" href="#">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-at" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"/>
+                            </svg>
+                              restaurant.co@gmail.com
+                          </a><br>
+                          <a class="nav-linkTRM" href="#">
+                             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                             <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+                             </svg>
+                              033 - 333 3333 <span id="space">022 - 222 2222</span>
+                          </a><br>
+                          <a class="nav-linkTRM" href="#">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                            </svg>
+                              No 20/A, ABC Street, Somewhere.
+                          </a>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <br>
+                <div class="card card-body">
+                    <h2 class="row justify-content-center">Contact Form</h2>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ Form.as_p }}
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <br>
+                <div class="card card-body">
+                    <h2 class="row justify-content-center">Our Location</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

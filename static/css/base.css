@@ -1,0 +1,49 @@
+.nav-link{
+    color: #f2f2f2;
+}
+.navbar-custom {
+    background-color: #09222d;
+}
+.footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height:10vh;
+   background-color:#09222d;
+   color: white;
+}
+.fa {
+  font-size: 30px;
+  width: 30px;
+  text-decoration: none;
+
+  border-radius: 50%;
+}
+.fa-facebook {
+  color: white;
+}
+.fa-facebook:hover {
+    opacity: 1;
+    color:#3b5998;
+}
+.fa-twitter {
+  color: white;
+}
+.fa-twitter:hover {
+    opacity: 1;
+    color:#00aff0;
+}
+.fa-linkedin {
+  color: white;
+}
+.fa-linkedin:hover {
+    opacity: 1;
+    color:#0077B5;
+}
+.fa-instagram {
+  color: white;
+}
+.fa-instagram:hover {
+    opacity: 1;
+    color:#E1306C;
+}

@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<!--
+<link rel="stylesheet" href={% static "LoginForm.css" %}>
+<link rel="stylesheet" href={% static "RegisterForm.css" %}>
+-->
+
+<link rel="stylesheet" href={% static "trial.css" %}>
+
+
+{% endblock css %}
+
+{% block content %}
+
+
+<div class="parallax"></div>
+
+<div style="height:500px;background-color:rgb(255, 255, 255);font-size:36px">
+Scroll Up and Down this page to see the parallax scrolling effect.
+This div is just here to enable scrolling.
+Tip: Try to remove the background-attachment property to remove the scrolling effect.
+</div>
+
+<div class="parallax"></div>
+<!--<div class="container">
+    <br>
+    <div class="row">
+      <div class="col-lg-8 col-xl-7 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+              Background image for card set in CSS! 
+          </div>
+          <div class="card-body">
+            <h3 class="login-heading mb-4">Welcome back!</h3>
+                <form>
+                  <div class="form-label-group">
+                    
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+  
+                  <div class="form-label-group">
+                    
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+  
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Remember password Or </label>
+                    <label class="custom-control-label text-center" for="customCheck1"><a href="#">Forgot password?</a></label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                  {% for message in messages %}
+
+                        <p>{{ message }}</p>
+
+                    {% endfor %}
+                  <div class="d-block text-center mt-2 ">Don't have an account? SignUp now!!<a class="d-block text-center mt-2 small" href={% url 'RegisterForm' %}>Click to Register</a></div>
+                </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+-->
+
+
+
+
+
+<!--
+    <div class="container">
+    <div class="row ">
+      <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+      <div class="col-md-8 col-lg-6">
+        <div class="login d-flex align-items-center py-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 col-lg-8 mx-auto">
+                <h3 class="login-heading mb-4">Welcome back!</h3>
+                <form>
+                  <div class="form-label-group">
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    <label for="inputEmail">Email address</label>
+                  </div>
+  
+                  <div class="form-label-group">
+                    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <label for="inputPassword">Password</label>
+                  </div>
+  
+                  <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                  </div>
+                  <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Sign in</button>
+                  <div class="text-center">
+                    <a class="small" href="#">Forgot password?</a></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+    <h3>LoginForm</h3>
+
+    {% for message in messages %}
+
+        <p>{{ message }}</p>
+
+    {% endfor %}
+
+    <a href={% url 'RegisterForm' %}>RegisterForm</a>
+
+    -->
+
+
+{% endblock content %}

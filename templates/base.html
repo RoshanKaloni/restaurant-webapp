@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta>
+    <title>Canteen</title>
+    <link rel="shortcut icon" href="{% static 'css/images/favicon.ico' %}" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="UTF-8">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+          <nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-custom ">
+              <a class="navbar-brand" href="{% url 'restaurant-home' %}">CANTEEN</a>
+              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="#">Register</a>
+              {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hello {{request.user}}
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li >
+                                <a class="dropdown-item" href={% url 'Logout' %}>Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <span class="navbar-text">
+
+                    </span>
+
+                    {% endif %}
+              <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url  'orderonline' %}">Order Online</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url  'contactus' %}">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                  <button type="button" id="popcart" class="btn btn-secondary mr-2" data-html="true" data-toggle="cartitemsnav" data-placement="bottom" title="Cart" data-content="And here's some amazing content. It's very engaging. Right?">
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"></path>
+                      </svg>Cart(<span id="cart">0</span>)
+                  </button>
+                  </li>
+
+              </ul>
+          </nav>
+    </header>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block js %}
+        <script src="{% static 'js/base.js' %}"></script>
+        <script src="{% static 'js/orderonline.js' %}"></script>
+    {% endblock js %}
+
+</body>
+    <!--<div class="footer d-flex">
+        <div class="d-flex my-3 text-truncate">
+            <div class=" px-4" style="color:azure;text-align: justify;font-weight:bolder;font-size:20px;">Designed and Developed By : </div>
+            <div class=" pr-2 py-1 " style="color:azure;font-weight:normal;font-size:18px;font-family:georgia;">Roshan</div>
+            <div class=" px-2 py-1" style="color:azure;font-weight:normal;font-size:18px;font-family:georgia;">Tejas</div>
+            <div class=" px-2 py-1" style="color:azure;font-weight:normal;font-size:18px;font-family:georgia;">Mitanshu</div>
+        </div>
+        <ul class="ml-auto">
+            <a href="#" class="fa fa-facebook px-5 py-3"></a>
+            <a href="#" class="fa fa-twitter px-5 py-3"></a>
+            <a href="#" class="fa fa-linkedin px-5 py-3"></a>
+            <a href="#" class="fa fa-instagram px-5 py-3"></a>
+        </ul>
+    </div>-->
+</html>

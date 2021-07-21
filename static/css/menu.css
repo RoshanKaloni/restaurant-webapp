@@ -1,0 +1,16 @@
+#category {
+    font-family: "Arial Black", serif;
+    color: #00ffae;
+    text-align: center;
+    font-size: x-large;
+}
+#dish_name {
+    font-family: "Arial Black", serif;
+    color: #5fff00;
+    text-align: center;
+}
+#description {
+    font-family: "Georgia", serif;
+    color: #ffffff;
+    text-align: center;
+}

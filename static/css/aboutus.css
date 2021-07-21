@@ -1,0 +1,103 @@
+
+/* COPY THE CONTENT FOR ABOUT US FROM HERE*/
+html {
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+body{
+    background:black;
+    background-image:url('https://cfcdn.streetfightmag.com/wp-content/uploads/Fotolia_90825818_S.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity:0.97;
+}
+.container{
+    margin-top:90px;
+}
+
+/* Featurettes
+------------------------- */
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+
+}
+.lead{
+  color:black;
+  font-size:18px;
+}
+.featurette-image{
+    height:350px;
+    width:100%;
+}
+.featurette-heading {
+    font-size: 35px;
+    color:slategray;
+  }
+
+/*-----REVIEW------*/
+.container1{
+  display: flex;
+  }
+.red {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin-top:0.4rem;
+  margin-right:2rem;
+}
+.green {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin-top:0.4rem;
+  margin-bottom:0.6rem;
+  margin-left:2rem;
+  margin-right:2rem;
+  text-align:center;
+  font-size:14px;
+  color:black;
+}
+.blue {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  margin-top:0.4rem;
+  margin-left:2rem;
+}
+.container>div {
+  font-size: 5vw;
+  padding-left: 0.25em;
+  color: white;
+  flex: 1;
+  margin-bottom:5rem;
+  margin-top:1rem;
+}
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 1rem;
+  }
+}
+.heading {
+  font-size: 25px;
+  margin-right: 25px;
+}
+.star {
+    content: "\2605";
+    font-size:25px;
+    color:orange;
+}

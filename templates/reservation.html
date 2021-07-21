@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+    <link href="{% static 'css/roshan_reservation.css' %}" rel="stylesheet">
+    <script src="{% static 'js/reservation.js' %}"></script>
+    <div class="section-container rounded">
+        <h4  style="font-size:50px;font-weight:bold;color:gray;">Let's Grab a Bite!!!</h4>
+        <div  style="font-size:25px;font-weight:300;color:lightslategray;">Fine Dining experience</div>
+        <button class="btn btn-dark blink " onclick="new_func_open()" style="width:auto;opacity:1;">Reserve Now!!!</button>
+    </div>
+    <div id="id01" class="modal">
+        <form name ="reservation_form" class="modal-content animate container mt-5" onsubmit="return reservation_validate()" method="post">
+            {% csrf_token %}
+            <span onclick="new_func_close()" class="row mt-2 close " title="Close Modal" >&times;</span>
+            <div class="mt-4 ml-2 mr-3">
+                <div class="row">
+                    <label for="uname" class="col-4 mt-4"><b>Name :</b></label>
+                    <input type="text" id = "uname" class="col-8" placeholder="Enter Your Name" name="uname" value = "" required>
+                    <div class="error" id="nameErr"><br></div>
+                </div>
+                <div class="row">
+                    <label for="Number" class="col-4 mt-4"><b>Mobile Number :</b></label>
+                    <input type="number" id = "Number"  class="col-8" placeholder="Enter Your Mobile Number" name="MobileNumber" value = "" required>
+                    <div class="error" id="Mobile_error"><br></div>
+                </div>
+                <div class="row">
+                    <label for="Numberofvisitor" class="col-4 mt-4"><b>No. of visitors :</b></label>
+                    <input type="number" id = "Numberofvisitor" class="col-8"  placeholder="Enter Number of visitors" name="Numberofvisitor" value = "" required>
+                    <div class="error" id="visitor_error"><br></div>
+                </div>
+                <div class="row">
+                    <label for="emaila" class="col-4 mt-4"><b>Email Id :</b></label>
+                    <input type="email" id = "emaila"  class="col-8" placeholder="Enter Your Email Id" name="email" value = "" required>
+                    <div class="error" id="eid_error"><br></div>
+                </div>
+                <div class="row">
+                    <label for="reference_id" class="col-4 mt-4"><b>Reference ID :</b></label>
+                    <input type="text" id = "reference_id"  class="col-8" placeholder="Enter Your Payment Reference ID" name="reference_id" value = "" required>
+                    <div class="error" id="ref_error"><br></div>
+                </div>
+                <div class="row">
+                    <label for="datetime" class="col-4 mt-4"><b>Visiting date :</b></label>
+                    <input type="datetime-local" id = "datetime" class="col-8"  placeholder="Select your visiting date" name="datetime" value = "" required>
+                    <div class="error" id="datetime_error"><br></div>
+                </div>
+                <div class="row ">
+                    <button type="submit" id="reserved"  class="btn btn-outline-dark">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        // Get the modal
+        let modal = document.getElementById('id01');
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+{% endblock content %}

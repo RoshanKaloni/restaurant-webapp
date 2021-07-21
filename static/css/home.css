@@ -1,0 +1,243 @@
+html {
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+/*parallax css code*/
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+  padding-bottom: 20rem;
+  color: #5a5a5a;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:100%;
+
+}
+.bgimg-1 {
+  background-image: url("https://www.theredbarn.ca/wp-content/uploads/2018/08/pic-redbarn.jpg");
+  min-height: 100%;
+  height:50rem;
+  opacity:1;
+}
+.bgimg-2 {
+  background-image: url("https://hospitalityfurnitureconnections.com/blog/wp-content/uploads/2020/05/blog1-1200x675.jpg");
+  min-height:400px;
+  opacity:1;
+}
+.bgimg-3 {
+  background-image: url("https://www.theredbarn.ca/wp-content/uploads/2018/08/pic-redbarn.jpg");
+  min-height: 400px;
+}
+/*RESERVATION BUTTON*/
+
+.blink{
+    background-color:#09222d;
+    color:white;
+    animation: blinking .5s linear infinite;
+}
+@keyframes blinking {
+  from {opacity:1;background-color:#09222d;}
+  to {opacity:1;background-color:gray; }
+  }
+
+.section-container2{
+    color:black;
+    font-family:arial;
+    font-size:80px;
+    font-weight:bolder;
+
+    margin-bottom:0rem;
+    margin-right:20rem;
+    margin-top:0rem;
+    margin-left:6rem;
+
+    padding-top:2rem;
+    padding-right:0rem;
+    padding-left:0rem;
+    padding-bottom:0rem;
+
+    text-align:center;
+    background-color:white;
+    background-size:cover;
+    opacity:0.85;
+    position:center;
+}
+.section-container1{
+    color:black;
+    font-family:arial;
+    font-size:80px;
+    font-weight:bolder;
+
+    margin-bottom:0;
+    margin-right:20rem;
+    margin-top:0rem;
+    margin-left:20rem;
+
+    padding-top:2rem;
+    padding-right:0rem;
+    padding-left:0rem;
+    padding-bottom:0rem;
+
+    text-align:center;
+    background-color:white;
+    background-size:cover;
+    opacity:0.85;
+}
+.caption {
+    position: absolute;
+    left:0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+.caption2 {
+    position: absolute;
+    left:0;
+    top: 65%;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+@keyframes reserve {
+    0% {background-color:#FF0000;}
+    50% {background-color:yellow; }
+    100% {background-color:red; }
+}
+
+.logo_caption>img {
+    position:absolute;
+    left:35%;
+    top: 5%;
+    width: 30%;
+    height: 55%;
+    text-align: center;
+    color: black;
+}
+.caption1{
+  position: absolute;
+  left:0;
+  top: 17%;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+}
+.caption2 span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
+  animation: reserve .5s linear infinite;
+}
+
+span.border{
+  margin-top:20rem;
+}
+h2 {
+  letter-spacing:1.5px;
+  font: 20px "Lato", sans-serif;
+  color: black;
+}
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+  }
+}
+
+
+
+/*----END----*/
+/*body{
+    /*background-image:url('https://www.theredbarn.ca/wp-content/uploads/2018/08/pic-redbarn.jpg');
+    background:black;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}*/
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 0rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+.carousel-item > img {
+  position: relative;
+  top: 0;
+  left: 10%;
+  width: 80%;
+  height: 32rem;
+}
+.carousel-control-prev-icon,.sr-only{
+    margin-left: 90%;
+
+
+}
+.carousel-control-next-icon,.sr-only{
+    margin-right: 90%;
+}
+span.carousel-control-next-icon, span.carousel-control-prev-icon{
+    background-color:#09222d;
+}
+
+/*to top*/
+span>svg{
+   color:white;
+    animation: scroller .4s linear infinite;
+}
+@keyframes scroller {
+  from {color:black;}
+  to {color:white; }
+ }
+

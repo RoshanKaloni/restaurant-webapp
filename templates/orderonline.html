@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% load static %}
+{% block js %}
+     <script>cart = JSON.parse(localStorage.getItem('cart'));
+     if(localStorage.getItem('cart') == null){
+        cart = {};
+     } else {
+         cart = JSON.parse(localStorage.getItem('cart'));
+         document.getElementById('cart').innerHTML = Object.keys(cart).length;
+     }
+     updatePopover(cart);
+
+function updatePopover(cart) {
+    let popStr = "";
+    popStr = popStr + "<h6> Dishes in your Cart&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </h6><div class='mx-2 my-2'>";
+    let i = 1;
+    for (let item in cart){
+        popStr = popStr + "<b>" + i + "</b>. ";
+        popStr = popStr + cart[item][1] + ": - " + cart[item][0] + '<div style="float: right"> Price: ' + cart[item][2]*cart[item][0] + '</div><br>';
+        i = i+1;
+    }
+    popStr = popStr + "</div> <a href='/templates/cart_checkout.html'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart(cart)' id ='clearCart' style='float: right'>Clear Cart</button>"
+    document.getElementById('popcart').setAttribute('data-content', popStr);
+    $('#popcart').popover('show');
+}
+
+function clearCart(cart) {
+    console.log('in copybase2')
+    for (let item in cart) {
+        document.getElementById('div' + item).innerHTML = '<button type="button" id="' + item + '" class="btn btn-outline-primary cartbutton">Add To Cart</button>'
+    }
+    localStorage.clear();
+    cart = {};
+    updateCart(cart);
+    updatePopover(cart)
+}</script>
+    <script src="{% static 'js/orderonline.js' %}"></script>
+{% endblock js %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/menu_roshannew.css' %}">
+<br>
+    <div class="container mb-xl-5" >
+        <button class="tablink col-2 mt-4" onclick="openPage('Starter', this, 'tomato')" id="defaultOpen">Starter</button>
+        <button class="tablink col-2 mt-4" onclick="openPage('Main course', this, 'tomato')">Main Course</button>
+        <button class="tablink col-2 mt-4" onclick="openPage('Roti and Rice', this, 'tomato')" >Roti and Rice</button>
+        <button class="tablink col-2 mt-4" onclick="openPage('Drinks', this, 'tomato')"  >Drinks</button>
+        <button class="tablink col-2 mt-4" onclick="openPage('Desserts', this, 'tomato')" >Desserts</button>
+        <button class="tablink col-2 mt-4" onclick="openPage('Specials', this, 'tomato')" >Specials</button>
+
+        {% for i,c in items1.items %}
+            <!--<h1 class = 'category'>Desserts</h1>-->
+
+            <div id="{{ i }}" class="container tabcontent" style="height:800px;width:1050px;overflow-y:auto;">
+                {% for b in c %}
+                    <div class="row">
+                        <div class="dish_name col" id = 'namepr{{ b.dish_id }}'>{{ b.dish_name }}</div>
+                        <div class="description col" id = 'description'>{{ b.desc }}</div>
+                        <div class=" dish_price col" id = 'pricepr{{ b.dish_id }}'>Rs: {{ b.price }}</div>
+                        <div class=" imgContainer ">
+                            <div class=" rounded img-thumbnail dish_img">
+                                 <img src="{{ b.image }}" alt="This is how our dish looks">
+                            </div>
+                            <div class="imgButton">
+                                <span id="divpr{{ b.dish_id }}" class="divpr">
+                                    <button type="button" id="pr{{ b.dish_id }}" class="btn btn-outline-primary cartbutton" >Add to Cart</button>
+                                </span>
+                              </div>
+                        </div>
+                    </div>
+                    <hr>
+                {% endfor %}
+            <!-- <p style = 'color: black'>Any line</p> -->
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
+

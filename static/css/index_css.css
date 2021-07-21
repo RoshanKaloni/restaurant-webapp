@@ -1,0 +1,80 @@
+html {
+
+  overflow-y: scroll; /* Add the ability to scroll */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+body {
+    background-color: rgb(250, 178, 178);
+    background-image: url('images/oip.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    overflow: hidden;
+  }
+h1{
+	font-size: 50px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+header{
+    font-variant: normal;
+    font-size: 150%;
+    text-align: right;
+    overflow: hidden;
+    background-color: #09222d;
+}
+#baseheadertejas a{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 10px 8.5px;
+    text-decoration: none;
+}
+#baseheadertejas a:hover {
+    background-color: #dddddd;
+    color: black;
+}
+
+#popcart {
+    float: right;
+
+}
+
+.container-fluid{
+    padding-right: 0px;
+}
+#Restaurantname {
+    color: #f2f2f2;
+    justify-content: flex-start;
+
+}
+
+footer {
+   position: relative;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #09222d;
+   color: white;
+   text-align: center;
+}
+svg{
+    font-size:1.5rem;
+    margin-right: 0.5rem;
+    }
+
+.navbar-custom {
+           background-color: #09222d;
+        }

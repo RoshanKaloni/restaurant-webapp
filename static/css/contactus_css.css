@@ -1,0 +1,9 @@
+
+#map {
+    height: 550px;
+    width: 850px;
+    border-style: groove;
+    left: 30px;
+    top: 30px;
+    margin-bottom: 30px;
+}
